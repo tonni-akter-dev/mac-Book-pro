@@ -43,21 +43,21 @@ const memoryPrice = parseInt(document.getElementById('defaultMemory').innerText)
     const deliveryCost = parseInt(document.getElementById('defaultDelivery').innerText);
         totalPrice.innerText = defaultPrice + memoryPrice + storagePrice + deliveryCost;
     let finalTotal = parseInt(document.getElementById('final-total').innerText = totalPrice.innerText);
-    return finalTotal;
+ 
 }
+
 
 // cupon code part here............................
 document.getElementById('apply').addEventListener('click', function () {
     const getInputValue = document.getElementById('promo-code');
     const getInputText = getInputValue.value;
-    // console.log(getInputText);
+    getInputValue.value = '';
     if (getInputText == 'stevekaku') {
-        console.log('hi');
-          let finalTotal = finalTotal / 20;
+        const finalPrice = document.getElementById('final-total');
+        const price = finalPrice.innerText;
+        finalPrice.innerText= price-(price*0.20);
     }
     else {
-   alert ('get promo code or pay total price')
+        alert('get promo code or pay total price');
         }
-
-
     });
